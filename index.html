@@ -413,9 +413,26 @@
       color: var(--teal);
     }
 
+    .process-mini-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .process-mini-label::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: var(--teal);
+    }
     .process-mini {
       display: flex;
-      gap: 10px;
+      gap: 14px;
       align-items: flex-start;
     }
     .process-mini .step {
@@ -423,20 +440,21 @@
       padding: 0;
     }
     .process-mini .step-n {
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1.6px;
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: -0.03em;
       color: var(--gold);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .process-mini .step-t {
       font-family: var(--display);
       font-weight: 500;
-      font-size: 14px;
-      line-height: 1.2;
+      font-size: 19px;
+      line-height: 1.18;
       color: var(--ink);
-      letter-spacing: -0.005em;
+      letter-spacing: -0.012em;
     }
     .process-mini .step-t em {
       font-family: var(--editorial);
@@ -446,9 +464,11 @@
     }
     .process-mini .arrow {
       font-family: var(--display);
-      font-size: 16px;
+      font-weight: 300;
+      font-size: 30px;
       color: var(--gold);
-      padding-top: 14px;
+      padding-top: 6px;
+      line-height: 1;
     }
 
     /* ── BOTTOM RAIL ── */
@@ -556,9 +576,8 @@
       </div>
       <div class="top-meta">
         <span class="pulse"></span>
-        <span>FULL-TIME GLOBAL TALENT</span>
-        <span class="hide-mobile">·</span>
-        <span class="hide-mobile accent">BRIEFING</span>
+        <span>SAGAN IS A</span>
+        <span class="accent">LEVERAGE COMPANY</span>
       </div>
     </div>
 
@@ -637,6 +656,7 @@
           <span class="guarantee-num">90<span class="strike"></span></span><span class="guarantee-tag">days</span>
           <div class="guarantee-note">Replacement search at <em>no extra fee</em> if the fit isn't right.</div>
         </div>
+        <div class="process-mini-label">How it runs</div>
         <div class="process-mini">
           <div class="step">
             <div class="step-n">01</div>
