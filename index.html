@@ -142,48 +142,14 @@
       min-height: calc(100vh - 36px);
       padding: 48px 48px 38px;
       background: var(--cream);
-      display: grid;
-      grid-template-columns: 36px 1fr 36px;
-      grid-template-rows: auto 1fr auto;
+      display: flex;
+      flex-direction: column;
       gap: 0;
       position: relative;
       overflow: hidden;
     }
-    .hero::after {
-      /* Massive "PASSPORT" backdrop bleeding off right edge */
-      content: 'PASSPORT';
-      position: absolute;
-      bottom: -3vw;
-      right: -3vw;
-      font-family: var(--display);
-      font-weight: 200;
-      font-size: clamp(180px, 28vw, 480px);
-      line-height: 0.85;
-      letter-spacing: -0.04em;
-      color: var(--ink);
-      opacity: 0.04;
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    .hero-margin-l, .hero-margin-r {
-      position: relative;
-      writing-mode: vertical-rl;
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: rgba(10,14,15,0.55);
-      padding: 8px 0;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-    }
-    .hero-margin-l { transform: rotate(180deg); }
-    .hero-margin-l span, .hero-margin-r span { white-space: nowrap; }
 
     .hero-top {
-      grid-column: 2;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -223,7 +189,7 @@
     .issue-meta .small { font-size: 10px; color: rgba(10,14,15,0.5); }
 
     .hero-body {
-      grid-column: 2;
+      flex: 1;
       display: grid;
       grid-template-columns: 1fr 360px;
       gap: 60px;
@@ -290,7 +256,6 @@
     }
 
     .hero-meta {
-      grid-column: 2;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
@@ -460,35 +425,8 @@
       background: var(--cream);
     }
     .briefing .inner {
-      max-width: 1280px;
+      max-width: 1080px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 240px 1fr 180px;
-      gap: 80px;
-      align-items: start;
-    }
-    .briefing .left-rail {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: rgba(10,14,15,0.55);
-      line-height: 1.8;
-      padding-top: 12px;
-    }
-    .briefing .left-rail .num {
-      font-family: var(--display);
-      font-size: 56px;
-      font-weight: 300;
-      color: var(--teal);
-      line-height: 1;
-      margin-bottom: 18px;
-      letter-spacing: -0.03em;
-    }
-    .briefing .left-rail .num em {
-      font-family: var(--editorial);
-      font-style: italic;
-      color: var(--gold);
     }
     .briefing-body h2 {
       font-family: var(--display);
@@ -508,19 +446,10 @@
     }
     .briefing-body p {
       font-size: 18px;
-      line-height: 1.65;
+      line-height: 1.7;
       color: rgba(10,14,15,0.78);
       margin-bottom: 20px;
-      max-width: 660px;
-    }
-    .briefing-body p:first-of-type::first-letter {
-      font-family: var(--display);
-      font-weight: 400;
-      font-size: 78px;
-      line-height: 0.85;
-      float: left;
-      padding: 8px 14px 0 0;
-      color: var(--teal);
+      max-width: 760px;
     }
     .briefing-body strong {
       color: var(--ink);
@@ -532,26 +461,6 @@
       font-weight: 400;
       color: var(--teal);
       font-size: 1.04em;
-    }
-    .briefing .right-rail {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      color: rgba(10,14,15,0.5);
-      line-height: 1.9;
-      padding-top: 12px;
-      border-top: 1px solid var(--rule);
-    }
-    .briefing .right-rail .item { padding: 12px 0; border-bottom: 1px solid var(--rule-soft); }
-    .briefing .right-rail .item .k { color: var(--gold); display: block; margin-bottom: 4px; }
-    .briefing .right-rail .item .v {
-      font-family: var(--display);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-      text-transform: none;
-      letter-spacing: -0.01em;
     }
 
     /* ════════════════════════════════════════════════════════
@@ -789,23 +698,11 @@
     .act .roman {
       font-family: var(--display);
       font-weight: 300;
-      font-size: 96px;
+      font-size: 88px;
       line-height: 1;
       letter-spacing: -0.04em;
       color: var(--teal);
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .act .roman .small {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: rgba(10,14,15,0.5);
-      position: absolute;
-      top: 14px;
-      left: 0;
-      transform: translateY(-100%);
+      margin-bottom: 26px;
     }
     .act h3 {
       font-family: var(--display);
@@ -1429,12 +1326,9 @@
     <div class="left">
       <span class="pulse"></span>
       <span>SAGAN <span class="dim">·</span> PASSPORT</span>
-      <span class="dim hide-mobile">BRIEFING DOSSIER</span>
     </div>
     <div class="right">
-      <span class="dim hide-mobile">№002</span>
-      <span class="dim">·</span>
-      <span>MAY 2026</span>
+      <span>BRIEFING</span>
     </div>
   </div>
 
@@ -1444,8 +1338,6 @@
          HERO
          ═══════════════════════════════════════════════════════ -->
     <section class="hero">
-      <div class="hero-margin-l"><span>SAGAN · PASSPORT · GLOBAL TALENT · EDITION 002 · ARGENTINA · MENDOZA</span></div>
-
       <div class="hero-top">
         <div class="masthead">
           <img src="https://saganrecruitment.com/wp-content/uploads/2025/10/Sagan-Logo-2-e1759568299542.png" alt="Sagan" />
@@ -1453,8 +1345,8 @@
           <span class="product">Passport<em>.</em></span>
         </div>
         <div class="issue-meta">
-          <div>BRIEFING DOSSIER · <span class="accent">№002</span></div>
-          <div class="small">PREPARED FOR THIS CONVERSATION</div>
+          <div>HIRE OUTSTANDING GLOBAL TALENT</div>
+          <div class="small">FULL-TIME · STARTING AT $1,100/MO</div>
         </div>
       </div>
 
@@ -1495,23 +1387,18 @@
         </div>
       </div>
 
-      <div class="hero-margin-r"><span>VOL.01 · BRIEFING SERIES · CONFIDENTIAL TO RECIPIENT</span></div>
     </section>
 
     <!-- ═══════════════════════════════════════════════════════
          02 · MANIFESTO QUOTE
          ═══════════════════════════════════════════════════════ -->
     <section class="manifesto">
-      <div class="section-num"><span class="big">§02</span>MANIFESTO</div>
+      <div class="section-num"><span class="big">02</span>POSITION</div>
       <div class="inner">
         <div class="kicker reveal">A position, plainly stated</div>
         <h2 class="manifesto-quote reveal">
           <span class="open-quote">"</span>We screen <span class="we">hundreds</span> of candidates so you only meet the best. The people we place are <span class="yes">full-time integrated contractors</span>, not <span class="strike">markup agencies</span> or <span class="strike">freelancers</span>."
         </h2>
-        <div class="manifesto-foot">
-          <div class="attrib">From the <strong>Sagan Passport</strong> operating thesis</div>
-          <div class="pg">— §02 —</div>
-        </div>
       </div>
     </section>
 
@@ -1519,37 +1406,13 @@
          03 · THE BRIEFING (editorial body)
          ═══════════════════════════════════════════════════════ -->
     <section class="briefing">
-      <div class="section-num"><span class="big">§03</span>WHAT THIS IS</div>
+      <div class="section-num"><span class="big">03</span>WHAT THIS IS</div>
       <div class="inner">
-        <div class="left-rail">
-          <div class="num">§<em>03</em></div>
-          <div>Filed under:<br>OPERATIONS</div>
-          <div style="margin-top: 22px;">Filed by:<br>JESUS PACHECO</div>
-          <div style="margin-top: 22px;">Head of Revenue<br>SAGAN</div>
-        </div>
         <div class="briefing-body reveal">
           <h2>Not a recruiter. A <em>force multiplier</em> for your hiring.</h2>
           <p>Passport was built for founders and operators who need real leverage on their team but refuse to compromise on quality. We bridge the gap with vetted global talent who sit inside your operation full-time, at a rate that lets you actually <em>scale</em>.</p>
           <p>Every candidate goes through direct sourcing, live English and communication interviews, U.S. business culture alignment, role-specific experience validation, and skills assessments or portfolio reviews when the role calls for it. You see a curated shortlist with <strong>resume, video intro, strengths assessment, and recruiter evaluation</strong> for each person. No resume sifting on your end.</p>
           <p>The relationship doesn't end at placement. It starts there.</p>
-        </div>
-        <div class="right-rail">
-          <div class="item">
-            <span class="k">Origin Markets</span>
-            <span class="v">LATAM · ZA · EE · APAC</span>
-          </div>
-          <div class="item">
-            <span class="k">Engagement</span>
-            <span class="v">Full-time</span>
-          </div>
-          <div class="item">
-            <span class="k">Vetting Stages</span>
-            <span class="v">Five</span>
-          </div>
-          <div class="item">
-            <span class="k">Profile Includes</span>
-            <span class="v">CV · Video · Assessment · Eval</span>
-          </div>
         </div>
       </div>
     </section>
@@ -1558,7 +1421,7 @@
          04 · ROLES (price list)
          ═══════════════════════════════════════════════════════ -->
     <section class="roles">
-      <div class="section-num"><span class="big">§04</span>CATALOG</div>
+      <div class="section-num"><span class="big">04</span>CATALOG</div>
       <div class="inner">
         <div class="roles-head reveal">
           <h2>The <em>price list.</em><br>No hourly games.</h2>
@@ -1610,7 +1473,7 @@
          05 · PROCESS
          ═══════════════════════════════════════════════════════ -->
     <section class="process">
-      <div class="section-num"><span class="big">§05</span>HOW IT RUNS</div>
+      <div class="section-num"><span class="big">05</span>HOW IT RUNS</div>
       <div class="inner">
         <div class="process-head reveal">
           <h2>From <em>call to hire,</em><br>in three acts.</h2>
@@ -1619,22 +1482,22 @@
 
         <div class="acts">
           <div class="act reveal">
-            <div class="roman"><span class="small">Act One</span>I.</div>
+            <div class="roman">01</div>
             <h3>Define &amp; <em>Search.</em></h3>
             <p>One strategy call defines the exact skills and traits of your perfect hire. We build a detailed scorecard and run a tailored search.</p>
-            <div class="stamp">Phase 01 <strong>One call to kick off</strong></div>
+            <div class="stamp"><strong>One call to kick off</strong></div>
           </div>
           <div class="act reveal">
-            <div class="roman"><span class="small">Act Two</span>II.</div>
+            <div class="roman">02</div>
             <h3>Review &amp; <em>Interview.</em></h3>
             <p>You see a curated shortlist with the full 360 on each candidate. Resume, video intro, strengths assessment, recruiter evaluation. Pick your finalists.</p>
-            <div class="stamp">Phase 02 <strong>Placement in 7 to 14 days</strong></div>
+            <div class="stamp"><strong>Placement in 7 to 14 days</strong></div>
           </div>
           <div class="act reveal">
-            <div class="roman"><span class="small">Act Three</span>III.</div>
+            <div class="roman">03</div>
             <h3>Hire &amp; <em>Onboard.</em></h3>
             <p>Make the offer using our templates. We deliver a custom 30 to 90 day onboarding plan with clear milestones so the new hire ramps fast and stays long.</p>
-            <div class="stamp">Phase 03 <strong>30 to 90 day ramp</strong></div>
+            <div class="stamp"><strong>30 to 90 day ramp</strong></div>
           </div>
         </div>
       </div>
@@ -1644,7 +1507,7 @@
          06 · DIFFERENTIATORS
          ═══════════════════════════════════════════════════════ -->
     <section class="diff">
-      <div class="section-num"><span class="big">§06</span>WHY IT WORKS</div>
+      <div class="section-num"><span class="big">06</span>WHY IT WORKS</div>
       <div class="inner">
         <div class="diff-head reveal">
           <h2>Three things we<br>do <em>differently.</em></h2>
@@ -1654,19 +1517,19 @@
 
       <div class="principles">
         <div class="principle reveal">
-          <div class="num">— Principle 01</div>
+          <div class="num">01</div>
           <h3>Built around <em>specialization.</em></h3>
           <p>Remote global talent placement is our core business, not a side hustle bolted onto a domestic agency. The whole company is built around it. Sourcing infrastructure, training systems, candidate pipelines, all of it.</p>
           <p class="pull">It's the only thing we do, so we do it differently.</p>
         </div>
         <div class="principle reveal">
-          <div class="num">— Principle 02</div>
+          <div class="num">02</div>
           <h3>Curation <em>over volume.</em></h3>
           <p>You get a short list of the right people, not a flood of unqualified applicants. We screen hundreds so you spend your time on the ones worth meeting. Less noise, faster decisions, better matches.</p>
           <p class="pull">Volume is for jobs boards. Curation is for hiring.</p>
         </div>
         <div class="principle reveal">
-          <div class="num">— Principle 03</div>
+          <div class="num">03</div>
           <h3>Both sides <em>ready to work.</em></h3>
           <p>We prep the candidate on U.S. business culture, communication norms, and async collaboration. We prep you on the integration plan, the milestones, the early signals to watch for.</p>
           <p class="pull">Less friction week one. Faster ramp by month three.</p>
@@ -1679,14 +1542,14 @@
          07 · GUARANTEE
          ═══════════════════════════════════════════════════════ -->
     <section class="guarantee">
-      <div class="section-num"><span class="big">§07</span>GUARANTEE</div>
+      <div class="section-num"><span class="big">07</span>GUARANTEE</div>
       <div class="inner">
         <div class="num-block reveal">
           <span class="ninety">90<span class="strike"></span></span>
           <span class="days"><em>days.</em></span>
         </div>
         <div class="copy reveal">
-          <div class="kicker">— The replacement guarantee</div>
+          <div class="kicker">The replacement guarantee</div>
           <h3>If the fit isn't right, we run it again. <em>No extra fee.</em></h3>
           <p>Within the first ninety days, if a hire underperforms or simply isn't the right match, we open the search again and place the next one at no additional cost.</p>
           <p>You don't pay twice for the same role. You don't argue about scope. We just go.</p>
@@ -1699,8 +1562,8 @@
          08 · INDUSTRIES (marquee)
          ═══════════════════════════════════════════════════════ -->
     <section class="industries">
-      <div class="section-num" style="color: rgba(243,242,236,0.45);"><span class="big" style="color: var(--cream);">§08</span>WHO IT SERVES</div>
-      <div class="label">— Built for operators across</div>
+      <div class="section-num" style="color: rgba(243,242,236,0.45);"><span class="big" style="color: var(--cream);">08</span>WHO IT SERVES</div>
+      <div class="label">Built for operators across</div>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
           <span>Home Services</span><span class="dot"></span>
@@ -1725,7 +1588,7 @@
          09 · VOICES
          ═══════════════════════════════════════════════════════ -->
     <section class="voices">
-      <div class="section-num"><span class="big">§09</span>VOICES</div>
+      <div class="section-num"><span class="big">09</span>VOICES</div>
       <div class="inner">
         <div class="voices-head reveal">
           <h2>The proof is in the<br>placements that <em>stay.</em></h2>
@@ -1737,22 +1600,22 @@
 
         <div class="voice-feature reveal">
           <span class="mark">"</span>
-          <blockquote>My global talent team is up to five now. Only a one-hour time difference. <span class="accent">Much more skilled than I ever dreamed.</span></blockquote>
+          <blockquote>The quality of talent they surface and how streamlined the hiring process is. Candidates <span class="accent">consistently exceeded expectations</span> in professionalism, communication, and capability.</blockquote>
           <div class="cite">
-            <span class="who">Jared Peno</span>
+            <span class="who">Jameson Haslam</span>
             <span class="sep"></span>
-            <span class="role">Member · on record</span>
+            <span class="role">West Coast Deck</span>
           </div>
         </div>
 
         <div class="voice-row">
           <div class="voice-small reveal">
-            <div class="quote-num">— Voice 02</div>
-            <blockquote>The quality of talent they surface and how streamlined the hiring process is. Candidates <em>consistently exceeded expectations</em> in professionalism, communication, and capability.</blockquote>
-            <div class="cite"><strong>Jameson Haslam</strong> · West Coast Deck</div>
+            <div class="quote-num">02</div>
+            <blockquote>My global talent team is up to five now. Only a one-hour time difference. <em>Much more skilled than I ever dreamed.</em></blockquote>
+            <div class="cite"><strong>Jared Peno</strong> · Member, on record</div>
           </div>
           <div class="voice-small reveal">
-            <div class="quote-num">— Voice 03</div>
+            <div class="quote-num">03</div>
             <blockquote>I've saved myself <em>thousands of dollars</em> in time and lost productivity since the start of 2025.</blockquote>
             <div class="cite"><strong>David B.</strong> · Member, on record</div>
           </div>
@@ -1765,24 +1628,10 @@
          ═══════════════════════════════════════════════════════ -->
     <footer class="endmatter">
       <div class="inner">
-        <div class="top-row">
-          <div class="col">
-            <div class="lbl">Filed by</div>
-            <div class="val"><em>Jesus Pacheco</em><br>Head of Revenue, Sagan</div>
-          </div>
-          <div class="col">
-            <div class="lbl">Edition</div>
-            <div class="val">Briefing Dossier <em>№002</em><br>May 2026</div>
-          </div>
-          <div class="col">
-            <div class="lbl">For</div>
-            <div class="val">This conversation,<br><em>and the next one.</em></div>
-          </div>
-        </div>
         <div class="end">
-          <div class="left">— END OF BRIEFING —</div>
+          <div class="left">Prepared by Jesus Pacheco · Head of Revenue</div>
           <div class="mid"><img src="https://saganrecruitment.com/wp-content/uploads/2025/10/Sagan-Logo-2-e1759568299542.png" alt="Sagan" /></div>
-          <div class="right"><span class="star">★</span> SAGAN · PASSPORT</div>
+          <div class="right">getsagan.com · saganpassport.com</div>
         </div>
       </div>
     </footer>
