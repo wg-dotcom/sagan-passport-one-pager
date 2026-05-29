@@ -90,24 +90,35 @@
     }
     .top-meta {
       display: flex;
-      gap: 22px;
-      align-items: center;
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 1.6px;
-      text-transform: uppercase;
-      color: rgba(10,14,15,0.6);
+      gap: 14px;
+      align-items: baseline;
+      color: var(--ink);
     }
     .top-meta .pulse {
-      width: 7px; height: 7px; border-radius: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
       background: var(--gold);
       animation: pulse 2.4s ease-in-out infinite;
+      align-self: center;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(0.85); }
     }
-    .top-meta .accent { color: var(--gold); }
+    .top-meta .pre {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .top-meta .accent {
+      font-family: var(--editorial);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 28px;
+      letter-spacing: -0.015em;
+      color: var(--gold);
+    }
 
     /* ── HERO BLOCK ── */
     .hero {
@@ -576,8 +587,8 @@
       </div>
       <div class="top-meta">
         <span class="pulse"></span>
-        <span>SAGAN IS A</span>
-        <span class="accent">LEVERAGE COMPANY</span>
+        <span class="pre">Sagan is a</span>
+        <span class="accent">leverage company.</span>
       </div>
     </div>
 
